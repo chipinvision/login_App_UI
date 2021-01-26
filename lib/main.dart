@@ -77,8 +77,28 @@ class _MyHomePageState extends State<MyHomePage> {
                  minWidth: 150.0,
                  color: Colors.teal,
                  shape: StadiumBorder(),
-                 onPressed: (){},
-                 child: Text(
+                 onPressed: (){
+                     return showDialog(
+                  context: context,
+                  builder:(ctx) => AlertDialog(
+                      title: Text(
+                          'Sucessfully Logged in'
+                      ),
+                      content:Text(
+                          'Hey User! You are now sucessfully logged in...'
+                      ),
+                      actions: <Widget>[
+                         FlatButton(
+                             onPressed: () {
+                                 Navigator.of(ctx).pop();
+                             },
+                             child: Text('OK'),
+                         ),
+                      ],
+                  ),
+              );
+                 },
+                child: Text(
                    'LOGIN',
                    style: TextStyle(
                      color: Colors.white,
@@ -89,7 +109,27 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
              alignment: Alignment.centerRight,
               child: FlatButton(
-                onPressed: (){},
+                onPressed: (){
+                     return showDialog(
+                  context: context,
+                  builder:(ctx) => AlertDialog(
+                      title: Text(
+                          'Forgot Password'
+                      ),
+                      content:Text(
+                         'So you lost your password. No worry get another'
+                      ),
+                      actions: <Widget>[
+                         FlatButton(
+                             onPressed: () {
+                                 Navigator.of(ctx).pop();
+                             },
+                             child: Text('RESET'),
+                         ),
+                      ],
+                  ),
+              );
+                },
                 padding: EdgeInsets.only(right: 15.0, top:15.0,),
                 child: Text(
                   'Forgot Password',
